@@ -1,17 +1,18 @@
 This directory should contain the following images:
 
-1. hero.jpg - A hero image for the top of the website (full-screen background)
-2. about.jpg - An image for the About section
-3. cookie1.jpg - An image of cookie products for the menu section
-4. cookie2.jpg - Another image of cookie products for the menu section
+1. hero_desktop.jpg - A hero image for desktop devices (full-screen background)
+2. hero.jpg - A hero image for mobile devices (full-screen background)
+3. about.jpg - An image for the About section
+4. cookie1.jpg - An image of cookie products for the menu section (mobile only)
 5. favicon.ico - A favicon for the website (typically 32x32px)
 
 These should be replaced with actual images of Bonito LA Cookies products.
 
 Recommended image sizes:
-- hero.jpg: 1920x1080px (high resolution for full-screen background)
+- hero_desktop.jpg: 1920x1080px (high resolution for full-screen desktop background)
+- hero.jpg: 1080x1920px (optimized for mobile devices)
 - about.jpg: 800x600px
-- cookie1.jpg and cookie2.jpg: 600x600px
+- cookie1.jpg: 600x600px
 - favicon.ico: 32x32px (can be created from your logo)
 
 For the live website, please ensure all images are optimized for web use to maintain fast loading times. 

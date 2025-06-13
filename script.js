@@ -124,9 +124,19 @@ document.addEventListener('DOMContentLoaded', function() {
     // Update active nav item on scroll
     window.addEventListener('scroll', updateActiveNavItem);
 
-    // Add scroll animation to elements
+    // Ensure all elements are visible on page load
+    function showAllElements() {
+        document.querySelectorAll('.section-card, .about-image, .about-text, .menu-images img').forEach(element => {
+            element.classList.add('revealed');
+        });
+    }
+    
+    // Show all elements immediately to prevent disappearing on refresh
+    showAllElements();
+    
+    // Add scroll animation to elements that come into view later
     function revealOnScroll() {
-        const elements = document.querySelectorAll('.section-card, .about-image, .about-text, .menu-images img');
+        const elements = document.querySelectorAll('.section-card:not(.revealed), .about-image:not(.revealed), .about-text:not(.revealed), .menu-images img:not(.revealed)');
         
         elements.forEach(element => {
             const elementTop = element.getBoundingClientRect().top;
@@ -138,15 +148,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Add revealed class to CSS
+    // Add revealed class to CSS first
     const style = document.createElement('style');
     style.textContent = `
         .section-card, .about-image, .about-text, .menu-images img {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .revealed {
             opacity: 1;
             transform: translateY(0);
         }
@@ -161,9 +166,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     `;
     document.head.appendChild(style);
-    
-    // Initial call to reveal elements
-    revealOnScroll();
     
     // Reveal elements on scroll
     window.addEventListener('scroll', revealOnScroll);
